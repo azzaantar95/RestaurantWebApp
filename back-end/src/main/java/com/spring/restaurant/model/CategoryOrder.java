@@ -22,11 +22,11 @@ public class CategoryOrder extends BaseEntity {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "dateCreation")
+    @Column(name = "dataCreate")
     @CreationTimestamp
-    private Date dateCreation;
+    private Date dataCreate;
 
-    @Column(name = "dateUpdate")
+    @Column(name = "dataUpdate")
     @UpdateTimestamp
-    private Date dateUpdate;
+    private Date dataUpdate;
 }

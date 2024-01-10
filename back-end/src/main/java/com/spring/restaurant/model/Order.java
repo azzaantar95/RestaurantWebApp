@@ -15,11 +15,12 @@ public class Order extends CategoryOrder {
     private int price;
     @Column(name = "image")
     private String img;
-    @Column(name = "description")
+
+    @Column(name = "description",length = 2000)
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "id_category")
     private Category category;
 
 }
