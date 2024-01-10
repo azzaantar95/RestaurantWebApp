@@ -1,12 +1,15 @@
 package com.spring.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 import java.util.Set;
+
 import lombok.NoArgsConstructor;
 
 @Data
@@ -16,6 +19,7 @@ import lombok.NoArgsConstructor;
 public class Category extends CategoryOrder {
 
 
-    @OneToMany(mappedBy = "category" )
+    @JsonIgnore
+    @OneToMany(mappedBy = "category")
     private Set<Order> orders;
 }

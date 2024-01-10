@@ -1,5 +1,6 @@
 package com.spring.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +20,8 @@ public class Order extends CategoryOrder {
     @Column(name = "description",length = 2000)
     private String description;
 
+
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_category")
     private Category category;
