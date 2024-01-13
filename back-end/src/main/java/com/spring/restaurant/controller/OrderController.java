@@ -3,14 +3,13 @@ package com.spring.restaurant.controller;
 import com.spring.restaurant.model.Order;
 import com.spring.restaurant.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
+@RequestMapping("/api/")
 public class OrderController {
 
     private OrderService orderService;
@@ -20,8 +19,13 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping("api/allOrders")
+    @GetMapping("allOrders")
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
+    }
+
+    @GetMapping("category")
+    public List<Order> getAllOrdersByCategoryId(@RequestParam Long id) {
+        return orderService.getOrdersByCategoryId(id);
     }
 }

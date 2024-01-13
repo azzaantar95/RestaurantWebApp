@@ -8,12 +8,20 @@ import { Order } from '../model/order';
 })
 export class OrderServiceService {
 
-  private baseUrl='http://localhost:8080/api/allOrders';
+  private baseUrl='http://localhost:8080/api/';
 
   constructor(private http:HttpClient) { }
 
+  // to get all orders from the database
   getOrders():Observable<Order[]>{
 
-return this.http.get<Order[]>(this.baseUrl).pipe(map(Response=>Response))
+    return this.http.get<Order[]>(`${this.baseUrl}allOrders`).pipe(map(Response=>Response))
+  }
+
+  // to get all orders based on specific id
+
+  getOrdersByCategoryId(id:number):Observable<Order[]>{
+
+    return this.http.get<Order[]>(`${this.baseUrl}category?id=${id}`).pipe(map(Response=>Response))
   }
 }
