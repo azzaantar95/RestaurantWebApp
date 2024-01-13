@@ -17,8 +17,11 @@ export class OrderItemsComponent implements OnInit{
 
   }
   ngOnInit(): void {
-
-    this.organizeOrders()
+    this.route.paramMap.subscribe(
+      ()=>{
+        this.organizeOrders();
+      }
+    )
   }
 
   organizeOrders()
