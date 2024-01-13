@@ -16,7 +16,7 @@ const routes:Routes=[
     //http://localhost:4200/category
   {path:'category',component:OrderItemsComponent},
     //http://localhost:4200/orders
-  {path:'orders',component:CategoryItemsComponent},
+  {path:'orders',component:OrderItemsComponent},
     //http://localhost:4200/
   {path:'',redirectTo:'/orders',pathMatch:'full'},
    // if user enter anything without all routes.
